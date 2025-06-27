@@ -78,12 +78,11 @@ function loginValidation(email, password, loggedIn) {
     loginMessage.innerHTML = "Please fill in all fields.";
     return false;
   }
-  for (var i = 0; i < accounts.length; i++) {
-    if (!loggedIn) {
-      loginMessage.innerHTML = "Invalid email or password.";
-      return false;
-    }
+  if (!loggedIn) {
+    loginMessage.innerHTML = "Invalid email or password.";
+    return false;
   }
+
   return true;
 }
 function handleLogin(e) {
