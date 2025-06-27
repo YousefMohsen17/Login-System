@@ -17,8 +17,30 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="box my-5 p-5 text-center w-75 m-auto">
+    <div class="mynav d-none">
+      <nav class="navbar">
+        <div class="container">
+          <a class="navbar-brand text-white text-uppercase fs-4">Smart Login</a>
+          <form class="d-flex" role="search">
+            <button
+              class="btn btn-outline-warning text-white-50"
+              type="submit"
+              onclick="handleLogout()"
+            >
+              Logout
+            </button>
+          </form>
+        </div>
+      </nav>
+      <div
+        class="welcome-box translate-middle top-50 start-50 position-absolute w-50 p-5"
+      >
+        <h1 class="text-info text-center welcome-message"></h1>
+      </div>
+    </div>
+
+    <div class="container position-relative vh-100">
+      <form class="login-box box my-5 p-5 text-center w-75 m-auto">
         <h1 class="text-info">Smart Login System</h1>
         <input
           id="sign-in-email"
@@ -32,20 +54,60 @@
           class="form-control my-4 bg-transparent text-white"
           placeholder="Enter your password"
         />
-        <button class="btn btn-outline-info w-100 mb-3">Login</button>
+        <p class="text-danger fs-4 login-message"></p>
+        <button class="btn btn-outline-info w-100 mb-3 login-btn" type="submit">
+          Login
+        </button>
 
         <p class="text-white">
           Don't have an account?
-
           <a
             class="text-decoration-none text-white sign-up"
             href="#"
-            onclick="handleSignUpClick()"
+            onclick="handleSignInAndUpClick()"
           >
             Sign Up
           </a>
         </p>
-      </div>
+      </form>
+      <form class="signup-box box d-none my-5 p-5 text-center w-75 m-auto">
+        <h1 class="text-info">Smart Login System</h1>
+        <input
+          id="sign-up-name"
+          type="text"
+          placeholder="Enter your name"
+          class="form-control my-4 bg-transparent text-white"
+        />
+        <input
+          id="sign-up-email"
+          type="email"
+          class="form-control my-4 bg-transparent text-white"
+          placeholder="Enter your email"
+        />
+        <input
+          id="sign-up-password"
+          type="password"
+          class="form-control my-4 bg-transparent text-white"
+          placeholder="Enter your password"
+        />
+        <button
+          class="btn btn-outline-info w-100 mb-3 sign-up-btn"
+          type="submit"
+        >
+          Sign Up
+        </button>
+        <p class="text-success fs-3 signup-message"></p>
+        <p class="text-white">
+          You have an account?
+          <a
+            class="text-decoration-none text-white"
+            href="#"
+            onclick="handleSignInAndUpClick()"
+          >
+            Sign In
+          </a>
+        </p>
+      </form>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
